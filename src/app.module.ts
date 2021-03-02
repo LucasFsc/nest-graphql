@@ -8,9 +8,7 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(
-      `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@netsjs-cluster.vbnm1.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`,
-    ),
+    MongooseModule.forRoot(process.env.MONGO_URL),
     GraphQLModule.forRoot({
       typePaths: ['./**/*.graphql'],
       definitions: {
