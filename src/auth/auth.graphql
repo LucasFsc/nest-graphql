@@ -1,0 +1,16 @@
+type AuthJWT {
+  token: String!
+}
+
+input AuthDataInput {
+  email: String!
+  password: String!
+}
+
+type Query {
+  whoAmI: User
+}
+
+type Mutation {
+  login(authDataInput: AuthDataInput): AuthJWT
+}

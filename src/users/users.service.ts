@@ -30,10 +30,10 @@ export class UsersService {
   }
 
   async remove(id: string) {
-    return this.userModel.findByIdAndRemove(id);
+    return this.userModel.findByIdAndRemove(id).exec();
   }
 
-  async findByUsername(name: string) {
-    return this.userModel.findOne({ name });
+  async findByEmail(email: string) {
+    return this.userModel.findOne({ email }).exec();
   }
 }
