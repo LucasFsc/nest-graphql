@@ -1,16 +1,22 @@
 type User {
   _id: String!
+  email: String!
   name: String!
+  lastName: String!
 }
 
 input CreateUserInput {
+  email: String!
   name: String!
+  lastName: String!
   password: String!
 }
 
 input UpdateUserInput {
   id: Int!
+  email: String
   name: String
+  lastName: String
   password: String
 }
 

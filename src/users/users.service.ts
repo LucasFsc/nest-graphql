@@ -12,7 +12,8 @@ export class UsersService {
 
   async create(createUserInput: CreateUserInput) {
     const { password: plainPassword } = createUserInput;
-    const password = await bcrypt.hash(plainPassword, 12);
+    const salt = await bcrypt.genSalt(Number(process.env.BCRYPT_ROUNDS));
+    const password = await bcrypt.hash(plainPassword, salt);
     return this.userModel.create({ ...createUserInput, password });
   }
 
@@ -30,5 +31,9 @@ export class UsersService {
 
   async remove(id: string) {
     return this.userModel.findByIdAndRemove(id);
+  }
+
+  async findByUsername(name: string) {
+    return this.userModel.findOne({ name });
   }
 }
