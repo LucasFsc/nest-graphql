@@ -5,10 +5,13 @@ type User {
 
 input CreateUserInput {
   name: String!
+  password: String!
 }
 
 input UpdateUserInput {
   id: Int!
+  name: String
+  password: String
 }
 
 type Query {
