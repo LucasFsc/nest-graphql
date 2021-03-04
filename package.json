@@ -31,6 +31,8 @@
     "@nestjs/platform-express": "^7.6.13",
     "apollo-server-express": "^2.21.0",
     "bcrypt": "^5.0.1",
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
     "graphql": "^15.5.0",
     "graphql-tools": "^7.0.4",
     "mongoose": "^5.11.18",

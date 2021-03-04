@@ -19,7 +19,7 @@ export interface CreateUserInput {
 }
 
 export interface UpdateUserInput {
-    id: number;
+    id: string;
     email?: string;
     name?: string;
     lastName?: string;
@@ -33,14 +33,14 @@ export interface AuthJWT {
 export interface IQuery {
     whoAmI(): User | Promise<User>;
     users(): User[] | Promise<User[]>;
-    user(id: number): User | Promise<User>;
+    user(id: string): User | Promise<User>;
 }
 
 export interface IMutation {
     login(authDataInput?: AuthDataInput): AuthJWT | Promise<AuthJWT>;
     createUser(createUserInput: CreateUserInput): User | Promise<User>;
     updateUser(updateUserInput: UpdateUserInput): User | Promise<User>;
-    removeUser(id: number): User | Promise<User>;
+    removeUser(id: string): User | Promise<User>;
 }
 
 export interface User {

@@ -5,6 +5,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { GraphQLError } from 'graphql';
 
 @Module({
   imports: [
@@ -15,6 +16,10 @@ import { AuthModule } from './auth/auth.module';
       definitions: {
         path: join(process.cwd(), 'src/graphql.schema.ts'),
       },
+      formatError: (error: GraphQLError) => ({
+        message:
+          error.extensions?.exception?.response?.message || error.message,
+      }),
     }),
     UsersModule,
     AuthModule,
