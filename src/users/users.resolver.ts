@@ -3,13 +3,15 @@ import { UsersService } from './users.service'
 import { CreateUserInput } from './dto/create-user.input'
 import { UpdateUserInput } from './dto/update-user.input'
 import { GqlJwtAuthGuard } from '../auth/gql-jwt-auth.guard'
-import { UseGuards } from '@nestjs/common'
+import { UseFilters, UseGuards } from '@nestjs/common'
+import { MongoExceptionFilter } from '../common/filters/mongo-exception.filter'
 
 @Resolver('User')
 export class UsersResolver {
   constructor(private readonly usersService: UsersService) {}
 
   @Mutation('createUser')
+  @UseFilters(MongoExceptionFilter)
   async create(@Args('createUserInput') createUserInput: CreateUserInput) {
     return this.usersService.create(createUserInput)
   }
