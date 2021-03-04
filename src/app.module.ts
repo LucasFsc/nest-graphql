@@ -10,7 +10,9 @@ import { GraphQLError } from 'graphql'
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.MONGO_URL),
+    MongooseModule.forRoot(process.env.MONGO_URL, {
+      useNewUrlParser: true
+    }),
     GraphQLModule.forRoot({
       typePaths: ['./**/*.graphql'],
       definitions: {

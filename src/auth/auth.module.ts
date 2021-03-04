@@ -6,7 +6,6 @@ import { PassportModule } from '@nestjs/passport'
 import { JwtStrategy } from './jwt.strategy'
 import { JwtModule } from '@nestjs/jwt'
 import { ConfigModule } from '@nestjs/config'
-import { GqlJwtAuthGuard } from './gql-jwt-auth.guard'
 
 @Module({
   imports: [
@@ -18,7 +17,7 @@ import { GqlJwtAuthGuard } from './gql-jwt-auth.guard'
       signOptions: { expiresIn: '1h' }
     })
   ],
-  providers: [AuthResolver, AuthService, JwtStrategy, GqlJwtAuthGuard],
-  exports: [AuthService, GqlJwtAuthGuard]
+  providers: [AuthResolver, AuthService, JwtStrategy],
+  exports: [AuthService]
 })
 export class AuthModule {}
