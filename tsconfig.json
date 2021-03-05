@@ -12,5 +12,6 @@
     "baseUrl": "./src",
     "rootDir": "./src",
     "incremental": true
-  }
+  },
+  "exclude": ["dist", "test"]
 }
