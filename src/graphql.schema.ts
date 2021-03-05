@@ -16,6 +16,7 @@ export interface CreateUserInput {
     name: string;
     lastName: string;
     password: string;
+    roles?: string[];
 }
 
 export interface UpdateUserInput {
@@ -24,6 +25,7 @@ export interface UpdateUserInput {
     name?: string;
     lastName?: string;
     password?: string;
+    roles?: string[];
 }
 
 export interface AuthJWT {
@@ -48,4 +50,5 @@ export interface User {
     email: string;
     name: string;
     lastName: string;
+    roles: string[];
 }

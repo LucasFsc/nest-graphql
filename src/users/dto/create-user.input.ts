@@ -1,5 +1,6 @@
 import { InputType } from '@nestjs/graphql'
 import {
+  IsArray,
   IsEmail,
   IsNotEmpty,
   Matches,
@@ -26,4 +27,8 @@ export class CreateUserInput {
     message: 'password too weak'
   })
   password: string
+
+  @IsArray()
+  @IsNotEmpty()
+  roles: [string]
 }
