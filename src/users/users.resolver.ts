@@ -5,15 +5,27 @@ import { UpdateUserInput } from './dto/update-user.input'
 import { Roles, Role } from 'common/decorators/roles.decorator'
 import { SkipAuth } from 'common/decorators/skip-auth.decorator'
 import { User } from './schemas/user.schema'
+import { RegisterUserInput } from './dto/register-user.input'
 
 @Resolver(() => User)
 export class UsersResolver {
   constructor(private readonly usersService: UsersService) {}
 
-  @SkipAuth()
+  @Roles(Role.admin)
   @Mutation(() => User, { name: 'createUser' })
   async create(@Args('createUserInput') createUserInput: CreateUserInput) {
     return this.usersService.create(createUserInput)
+  }
+
+  @SkipAuth()
+  @Mutation(() => User, { name: 'registerUser' })
+  async register(
+    @Args('registerUserInput') registerUserInput: RegisterUserInput
+  ) {
+    return this.usersService.create({
+      ...registerUserInput,
+      roles: [Role.user]
+    })
   }
 
   @Roles(Role.admin)

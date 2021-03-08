@@ -33,6 +33,7 @@ type Mutation {
     """user's login password"""
     password: String!
   ): AuthJWT!
+  registerUser(registerUserInput: RegisterUserInput!): User!
   removeUser(id: String!): User!
   updateUser(updateUserInput: UpdateUserInput!): User!
 }
@@ -41,6 +42,20 @@ type Query {
   user(id: String!): User!
   users: [User!]!
   whoAmI: User!
+}
+
+input RegisterUserInput {
+  """user's email"""
+  email: String!
+
+  """user's last name"""
+  lastName: String!
+
+  """user's name"""
+  name: String!
+
+  """user's password"""
+  password: String!
 }
 
 input UpdateUserInput {

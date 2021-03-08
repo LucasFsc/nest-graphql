@@ -4670,13 +4670,18 @@
         "signature": "115bcb555ff0ab7cadf1f6465b77fe8f4706b66b3a0a9a63e30947324acd716a",
         "affectsGlobalScope": false
       },
+      "./src/users/dto/register-user.input.ts": {
+        "version": "2941fc17e9de3effa17e7d2119590de1ab108567728e45f5829abe5ed0db888b",
+        "signature": "691be690a05264579cd761b60fdf94dd1804bee073c4e07650c0b49943916e00",
+        "affectsGlobalScope": false
+      },
       "./src/common/enums/roles.enum.ts": {
         "version": "05e9b857342daf198fa8453dadda3c52cc7f57c6ab0b7ab2d000a62e1762d0ac",
         "signature": "730f80c15d28892842a4ff23bc6f3284f5bccec4dff380faac9ccb1d7e72d126",
         "affectsGlobalScope": false
       },
       "./src/users/schemas/user.schema.ts": {
-        "version": "c99e262ba446b9d405b70e79e10004c3b65512f7a52a99d8f0d9fb3b8d2fb091",
+        "version": "653956a60bf801e3b32153626bb0f3b9b22e9ccf2535914380872cfed9ddace9",
         "signature": "dbe6de28362e8d22e6a5869aa7a8a2e3ea8fb0ee34e66527fa111abbb6cf8506",
         "affectsGlobalScope": false
       },
@@ -4686,8 +4691,8 @@
         "affectsGlobalScope": false
       },
       "./src/users/users.service.ts": {
-        "version": "3b15db515a3c85e84f9da2eb8c5a50d90ce01770244830c3fa8f8b950766d8e2",
-        "signature": "6719142b2a774b6f05ec3b4090c3bf83f32b7b1ca52a20e0ed80c8d1e531d1b4",
+        "version": "221bdab5ef71accc6ff9e1f113528527ea3c79471e4df023f0f0948df2dedcb8",
+        "signature": "23e5065a2aa87e8dda7249fa22b4d7364e254c8ef375eb79f2d4f7c94e0e8754",
         "affectsGlobalScope": false
       },
       "./src/common/decorators/roles.decorator.ts": {
@@ -4701,8 +4706,8 @@
         "affectsGlobalScope": false
       },
       "./src/users/users.resolver.ts": {
-        "version": "040c8a23ba785347dd933bb0970d410650593c4bf63aae83c63c872d9ebd17e9",
-        "signature": "3ad4bbb8c3d95920c3009084d60ef50eab8f7305d51b7587b79c960df145c4c6",
+        "version": "150524ab7f71d0042fd69b891401ceba76d8d54f1f857f436553c1e8b3e8f214",
+        "signature": "fdabcb77f9a8a3e82909da76ca4c75daf4721eaf964ec5bd63e424474158c49c",
         "affectsGlobalScope": false
       },
       "./src/users/users.module.ts": {
@@ -9319,6 +9324,10 @@
         "./node_modules/@nestjs/graphql/index.d.ts",
         "./node_modules/class-validator/types/index.d.ts"
       ],
+      "./src/users/dto/register-user.input.ts": [
+        "./node_modules/@nestjs/graphql/index.d.ts",
+        "./src/users/dto/create-user.input.ts"
+      ],
       "./src/users/dto/update-user.input.ts": [
         "./node_modules/@nestjs/graphql/index.d.ts",
         "./node_modules/class-validator/types/index.d.ts",
@@ -9342,6 +9351,7 @@
         "./src/common/decorators/roles.decorator.ts",
         "./src/common/decorators/skip-auth.decorator.ts",
         "./src/users/dto/create-user.input.ts",
+        "./src/users/dto/register-user.input.ts",
         "./src/users/dto/update-user.input.ts",
         "./src/users/schemas/user.schema.ts",
         "./src/users/users.service.ts"
@@ -9352,6 +9362,7 @@
         "./node_modules/@types/bcrypt/index.d.ts",
         "./node_modules/mongoose/index.d.ts",
         "./src/users/dto/create-user.input.ts",
+        "./src/users/dto/register-user.input.ts",
         "./src/users/dto/update-user.input.ts",
         "./src/users/schemas/user.schema.ts"
       ]
@@ -13437,6 +13448,10 @@
       "./src/common/strategies/jwt.strategy.ts": [
         "./node_modules/@types/passport-jwt/index.d.ts"
       ],
+      "./src/users/dto/register-user.input.ts": [
+        "./node_modules/@nestjs/common/index.d.ts",
+        "./src/users/dto/create-user.input.ts"
+      ],
       "./src/users/dto/update-user.input.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
         "./src/users/dto/create-user.input.ts"
@@ -13446,6 +13461,7 @@
       ],
       "./src/users/users.resolver.ts": [
         "./src/users/dto/create-user.input.ts",
+        "./src/users/dto/register-user.input.ts",
         "./src/users/dto/update-user.input.ts",
         "./src/users/schemas/user.schema.ts",
         "./src/users/users.service.ts"
@@ -13453,6 +13469,7 @@
       "./src/users/users.service.ts": [
         "./node_modules/mongoose/index.d.ts",
         "./src/users/dto/create-user.input.ts",
+        "./src/users/dto/register-user.input.ts",
         "./src/users/dto/update-user.input.ts",
         "./src/users/schemas/user.schema.ts"
       ]
@@ -14485,6 +14502,7 @@
       "./src/common/strategies/jwt.strategy.ts",
       "./src/main.ts",
       "./src/users/dto/create-user.input.ts",
+      "./src/users/dto/register-user.input.ts",
       "./src/users/dto/update-user.input.ts",
       "./src/users/schemas/user.schema.ts",
       "./src/users/users.module.ts",

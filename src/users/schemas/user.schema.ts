@@ -8,7 +8,6 @@ export type UserDocument = User & Document
 @Schema()
 @ObjectType()
 export class User {
-  @Prop()
   @Field(() => String, { description: "user's _id", nullable: true })
   _id?: string
 
