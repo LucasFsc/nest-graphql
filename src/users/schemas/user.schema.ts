@@ -11,18 +11,23 @@ export class User {
   @Prop()
   @Field(() => String, { description: "user's _id", nullable: true })
   _id?: string
+
   @Prop({ unique: true })
   @Field(() => String, { description: "user's email" })
   email: string
+
   @Prop()
   @Field(() => String, { description: "user's name" })
   name: string
+
   @Prop()
   @Field(() => String, { description: "user's last name" })
   lastName: string
+
   @Prop()
   @Field(() => String, { description: "user's password" })
   password: string
+
   @Prop()
   @Field(() => [String], { description: "user's roles" })
   roles: [string] = [Roles.user]

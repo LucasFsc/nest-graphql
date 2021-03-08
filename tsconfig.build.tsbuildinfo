@@ -4676,7 +4676,7 @@
         "affectsGlobalScope": false
       },
       "./src/users/schemas/user.schema.ts": {
-        "version": "5daeaf903dcd9f5afcb8949fc236b72bdc264a1944b8a142b1822d6aa756fb6b",
+        "version": "c99e262ba446b9d405b70e79e10004c3b65512f7a52a99d8f0d9fb3b8d2fb091",
         "signature": "dbe6de28362e8d22e6a5869aa7a8a2e3ea8fb0ee34e66527fa111abbb6cf8506",
         "affectsGlobalScope": false
       },
