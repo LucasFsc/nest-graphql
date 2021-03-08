@@ -1,4 +1,4 @@
-import { InputType } from '@nestjs/graphql'
+import { InputType, Field } from '@nestjs/graphql'
 import {
   IsArray,
   IsEmail,
@@ -12,12 +12,15 @@ import {
 @InputType()
 export class CreateUserInput {
   @IsEmail()
+  @Field(() => String, { description: "user's email" })
   email: string
 
   @IsNotEmpty()
+  @Field(() => String, { description: "user's name" })
   name: string
 
   @IsNotEmpty()
+  @Field(() => String, { description: "user's last name" })
   lastName: string
 
   @IsString()
@@ -26,9 +29,11 @@ export class CreateUserInput {
   @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, {
     message: 'password too weak'
   })
+  @Field(() => String, { description: "user's password" })
   password: string
 
   @IsArray()
   @IsNotEmpty()
+  @Field(() => [String], { description: "user's roles" })
   roles: [string]
 }

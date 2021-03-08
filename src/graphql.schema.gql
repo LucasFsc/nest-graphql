@@ -1,0 +1,84 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AuthJWT {
+  """JWT authorization token"""
+  token: String!
+}
+
+input CreateUserInput {
+  """user's email"""
+  email: String!
+
+  """user's last name"""
+  lastName: String!
+
+  """user's name"""
+  name: String!
+
+  """user's password"""
+  password: String!
+
+  """user's roles"""
+  roles: [String!]!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  login(
+    """user's login email"""
+    email: String!
+
+    """user's login password"""
+    password: String!
+  ): AuthJWT!
+  removeUser(id: String!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+}
+
+type Query {
+  user(id: String!): User!
+  users: [User!]!
+  whoAmI: User!
+}
+
+input UpdateUserInput {
+  """user's email"""
+  email: String
+
+  """user's id"""
+  id: String!
+
+  """user's last name"""
+  lastName: String
+
+  """user's name"""
+  name: String
+
+  """user's password"""
+  password: String
+
+  """user's roles"""
+  roles: [String!]
+}
+
+type User {
+  """user's _id"""
+  _id: String
+
+  """user's email"""
+  email: String!
+
+  """user's last name"""
+  lastName: String!
+
+  """user's name"""
+  name: String!
+
+  """user's password"""
+  password: String!
+
+  """user's roles"""
+  roles: [String!]!
+}

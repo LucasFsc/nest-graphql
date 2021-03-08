@@ -2,20 +2,22 @@ import { Args, Resolver, Mutation, Query } from '@nestjs/graphql'
 import { AuthService } from './auth.service'
 import { SkipAuth } from '../common/decorators/skip-auth.decorator'
 import { GqlUserDecorator } from '../common/decorators/gql-jwt-user.decorator'
-import { AuthDataInput } from './dto/auth-data.input'
+import { AuthArgs } from './dto/auth.args'
+import { AuthJWT } from './entities/auth-jwt.entity'
+import { User } from 'users/schemas/user.schema'
 
 @Resolver('Auth')
 export class AuthResolver {
   constructor(private readonly authService: AuthService) {}
 
-  @Mutation('login')
+  @Mutation(() => AuthJWT)
   @SkipAuth()
-  async login(@Args('authDataInput') { email, password }: AuthDataInput) {
+  async login(@Args() { email, password }: AuthArgs) {
     return this.authService.login(email, password)
   }
 
-  @Query('whoAmI')
-  async whoAmI(@GqlUserDecorator() user: any): Promise<any> {
+  @Query(() => User)
+  async whoAmI(@GqlUserDecorator() user: User): Promise<any> {
     return user
   }
 }

@@ -17,10 +17,8 @@ import { RolesGuard } from 'common/guards/roles.guard'
       useNewUrlParser: true
     }),
     GraphQLModule.forRoot({
-      typePaths: ['./**/*.graphql'],
-      definitions: {
-        path: join(process.cwd(), 'src/graphql.schema.ts')
-      },
+      autoSchemaFile: join(process.cwd(), 'src/graphql.schema.gql'),
+      sortSchema: true,
       formatError: (error: GraphQLError) => ({
         message: error.extensions?.exception?.response?.message || error.message
       })
