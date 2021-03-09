@@ -7,8 +7,8 @@ import { join } from 'path'
 import { UsersModule } from './users/users.module'
 import { AuthModule } from './auth/auth.module'
 import { GraphQLError } from 'graphql'
-import { GqlJwtAuthGuard } from 'common/guards/gql-jwt-auth.guard'
-import { RolesGuard } from 'common/guards/roles.guard'
+import { GqlJwtAuthGuard } from '@/guards/gql-jwt-auth.guard'
+import { RolesGuard } from '@/guards/roles.guard'
 
 @Module({
   imports: [

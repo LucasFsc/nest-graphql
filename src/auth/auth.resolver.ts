@@ -4,7 +4,7 @@ import { SkipAuth } from '../common/decorators/skip-auth.decorator'
 import { GqlUserDecorator } from '../common/decorators/gql-jwt-user.decorator'
 import { AuthArgs } from './dto/auth.args'
 import { AuthJWT } from './entities/auth-jwt.entity'
-import { User } from 'users/schemas/user.schema'
+import { User } from '@/users/schemas/user.schema'
 
 @Resolver('Auth')
 export class AuthResolver {

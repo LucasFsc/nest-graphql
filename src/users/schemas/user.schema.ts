@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
-import { Roles } from '../../common/enums/roles.enum'
+import { Roles } from '@/enums/roles.enum'
 import { ObjectType, Field } from '@nestjs/graphql'
 
 export type UserDocument = User & Document

@@ -2,7 +2,7 @@ import { Injectable, ExecutionContext } from '@nestjs/common'
 import { Reflector } from '@nestjs/core'
 import { GqlExecutionContext } from '@nestjs/graphql'
 import { AuthGuard } from '@nestjs/passport'
-import { SKIP_AUTH } from 'common/decorators/skip-auth.decorator'
+import { SKIP_AUTH } from '@/common/decorators/skip-auth.decorator'
 
 @Injectable()
 export class GqlJwtAuthGuard extends AuthGuard('jwt') {

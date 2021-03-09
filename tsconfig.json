@@ -9,9 +9,16 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./src",
-    "rootDir": "./src",
-    "incremental": true
+    "baseUrl": "./",
+    "incremental": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/decorators/*": ["./src/common/decorators/*"],
+      "@/enums/*": ["./src/common/enums/*"],
+      "@/filters/*": ["./src/common/filters/*"],
+      "@/guards/*": ["./src/common/guards/*"],
+      "@/strategies/*": ["./src/common/strategies/*"]
+    }
   },
   "exclude": ["dist", "test"]
 }
