@@ -8,7 +8,7 @@ export class MongoExceptionFilter implements ExceptionFilter {
       case 11000:
         const [key, value] = Object.entries({ ...exception }?.['keyValue'])?.[0]
         if (key && value) {
-          throw new ConflictException(`${key} ${value} is already in use`)
+          throw new ConflictException(`${key} '${value}' is already in use`)
         } else {
           throw new ConflictException()
         }

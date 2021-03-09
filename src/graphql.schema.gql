@@ -7,6 +7,31 @@ type AuthJWT {
   token: String!
 }
 
+type Cape {
+  """cape's id"""
+  _id: String!
+
+  """cape's background color"""
+  bg: String!
+
+  """cape's programming language logo URL"""
+  image: String!
+
+  """cape's programming language"""
+  language: String!
+}
+
+input CreateCapeInput {
+  """cape's background color"""
+  bg: String!
+
+  """cape's programming language logo URL"""
+  image: String!
+
+  """cape's programming language"""
+  language: String!
+}
+
 input CreateUserInput {
   """user's email"""
   email: String!
@@ -25,6 +50,7 @@ input CreateUserInput {
 }
 
 type Mutation {
+  createCape(createCapeInput: CreateCapeInput!): Cape!
   createUser(createUserInput: CreateUserInput!): User!
   login(
     """user's login email"""
@@ -34,11 +60,15 @@ type Mutation {
     password: String!
   ): AuthJWT!
   registerUser(registerUserInput: RegisterUserInput!): User!
+  removeCape(id: String!): Cape!
   removeUser(id: String!): User!
+  updateCape(updateCapeInput: UpdateCapeInput!): Cape!
   updateUser(updateUserInput: UpdateUserInput!): User!
 }
 
 type Query {
+  cape(id: String!): Cape!
+  capes: [Cape!]!
   user(id: String!): User!
   users: [User!]!
   whoAmI: User!
@@ -56,6 +86,18 @@ input RegisterUserInput {
 
   """user's password"""
   password: String!
+}
+
+input UpdateCapeInput {
+  """cape's background color"""
+  bg: String
+  id: String!
+
+  """cape's programming language logo URL"""
+  image: String
+
+  """cape's programming language"""
+  language: String
 }
 
 input UpdateUserInput {
