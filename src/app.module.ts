@@ -9,7 +9,8 @@ import { AuthModule } from './auth/auth.module'
 import { GraphQLError } from 'graphql'
 import { GqlJwtAuthGuard } from '@/guards/gql-jwt-auth.guard'
 import { RolesGuard } from '@/guards/roles.guard'
-import { CapesModule } from './capes/capes.module';
+import { CapesModule } from './capes/capes.module'
+import { RubberDucksModule } from './rubber-ducks/rubber-ducks.module'
 
 @Module({
   imports: [
@@ -26,7 +27,8 @@ import { CapesModule } from './capes/capes.module';
     }),
     UsersModule,
     AuthModule,
-    CapesModule
+    CapesModule,
+    RubberDucksModule
   ],
   providers: [
     {

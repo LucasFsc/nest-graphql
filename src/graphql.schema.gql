@@ -32,6 +32,17 @@ input CreateCapeInput {
   language: String!
 }
 
+input CreateRubberDuckInput {
+  """rubber duck cape"""
+  cape: String!
+
+  """rubber duck color"""
+  color: String
+
+  """rubber duck name"""
+  name: String!
+}
+
 input CreateUserInput {
   """user's email"""
   email: String!
@@ -51,6 +62,7 @@ input CreateUserInput {
 
 type Mutation {
   createCape(createCapeInput: CreateCapeInput!): Cape!
+  createRubberDuck(createRubberDuckInput: CreateRubberDuckInput!): RubberDuck!
   createUser(createUserInput: CreateUserInput!): User!
   login(
     """user's login email"""
@@ -61,14 +73,18 @@ type Mutation {
   ): AuthJWT!
   registerUser(registerUserInput: RegisterUserInput!): User!
   removeCape(id: String!): Cape!
+  removeRubberDuck(id: String!): RubberDuck!
   removeUser(id: String!): User!
   updateCape(updateCapeInput: UpdateCapeInput!): Cape!
+  updateRubberDuck(updateRubberDuckInput: UpdateRubberDuckInput!): RubberDuck!
   updateUser(updateUserInput: UpdateUserInput!): User!
 }
 
 type Query {
   cape(id: String!): Cape!
   capes: [Cape!]!
+  rubberDuck(id: String!): RubberDuck!
+  rubberDucks: [RubberDuck!]!
   user(id: String!): User!
   users: [User!]!
   whoAmI: User!
@@ -88,6 +104,20 @@ input RegisterUserInput {
   password: String!
 }
 
+type RubberDuck {
+  """rubber duck _id"""
+  _id: String!
+
+  """rubber duck cape"""
+  cape: Cape!
+
+  """rubber duck color"""
+  color: String
+
+  """rubber duck name"""
+  name: String!
+}
+
 input UpdateCapeInput {
   """cape's background color"""
   bg: String
@@ -98,6 +128,18 @@ input UpdateCapeInput {
 
   """cape's programming language"""
   language: String
+}
+
+input UpdateRubberDuckInput {
+  """rubber duck cape"""
+  cape: String
+
+  """rubber duck color"""
+  color: String
+  id: String!
+
+  """rubber duck name"""
+  name: String
 }
 
 input UpdateUserInput {

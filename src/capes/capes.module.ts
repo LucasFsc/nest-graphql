@@ -8,6 +8,7 @@ import { Cape, CapeSchema } from './schemas/cape.schema'
   imports: [
     MongooseModule.forFeature([{ name: Cape.name, schema: CapeSchema }])
   ],
-  providers: [CapesResolver, CapesService]
+  providers: [CapesResolver, CapesService],
+  exports: [CapesService]
 })
 export class CapesModule {}
