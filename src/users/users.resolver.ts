@@ -7,11 +7,11 @@ import { SkipAuth } from 'common/decorators/skip-auth.decorator'
 import { User } from './schemas/user.schema'
 import { RegisterUserInput } from './dto/register-user.input'
 
+@Roles(Role.admin)
 @Resolver(() => User)
 export class UsersResolver {
   constructor(private readonly usersService: UsersService) {}
 
-  @Roles(Role.admin)
   @Mutation(() => User, { name: 'createUser' })
   async create(@Args('createUserInput') createUserInput: CreateUserInput) {
     return this.usersService.create(createUserInput)
@@ -28,18 +28,17 @@ export class UsersResolver {
     })
   }
 
-  @Roles(Role.admin)
   @Query(() => [User], { name: 'users' })
   async findAll() {
     return await this.usersService.findAll()
   }
 
-  @Roles(Role.admin)
   @Query(() => User, { name: 'user' })
   async findOne(@Args('id', { type: () => String }) id: string) {
     return this.usersService.findOne(id)
   }
 
+  @Roles(Role.admin, Role.user)
   @Mutation(() => User)
   async updateUser(@Args('updateUserInput') updateUserInput: UpdateUserInput) {
     return this.usersService.update(updateUserInput.id, updateUserInput)
