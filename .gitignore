@@ -35,3 +35,5 @@ lerna-debug.log*
 
 # Project
 .env
+graphql.ts
+schema.gql
