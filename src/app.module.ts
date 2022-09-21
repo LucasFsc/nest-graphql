@@ -22,7 +22,7 @@ import { UsersModule } from './users/users.module'
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       definitions: {
         path: join(process.cwd(), 'src/graphql.ts'),
-        outputAs: 'class',
+        outputAs: 'interface',
         skipResolverArgs: true
       },
       sortSchema: true,
